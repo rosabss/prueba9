@@ -48,3 +48,40 @@
   </body>
 </html>
 
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Animaciones Básicas en A-Frame</title>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- 1. ROTACIÓN: Gira sobre su eje -->
+      <a-box position="-3 1 -5" color="#FF6B6B"
+             animation="property: rotation; to: 0 360 0; loop: true; dur: 4000">
+      </a-box>
+      
+      <!-- 2. POSICIÓN: Se mueve arriba y abajo -->
+      <a-sphere position="-1 1 -5" radius="0.5" color="#4ECDC4"
+                animation="property: position; to: -1 2 -5; dir: alternate; loop: true; dur: 2000">
+      </a-sphere>
+      
+      <!-- 3. ESCALA: Crece y decrece -->
+      <a-cylinder position="1 1 -5" radius="0.3" height="1" color="#FFE66D"
+                  animation="property: scale; to: 1.5 1.5 1.5; dir: alternate; loop: true; dur: 1500">
+      </a-cylinder>
+      
+      <!-- 4. COLOR: Cambia de color -->
+      <a-cone position="3 1 -5" radius-bottom="0.5" height="1" color="#95E1D3"
+              animation="property: color; to: #FF6B6B; dir: alternate; loop: true; dur: 3000">
+      </a-cone>
+      
+      <!-- Suelo -->
+      <a-plane position="0 0 -5" rotation="-90 0 0" width="10" height="4" color="#ECECEC"></a-plane>
+      
+      <!-- Cielo -->
+      <a-sky color="#87CEEB"></a-sky>
+    </a-scene>
+  </body>
+</html>
+

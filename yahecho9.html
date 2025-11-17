@@ -1,0 +1,51 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 5 - A-Frame con Texturas, Modelo 3D y Animaciones</title>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- ASSETS: Carga de texturas y modelo 3D -->
+      <a-assets>
+        <img id="ladrillo" src="ladrillo.png">
+        <img id="cesped" src="cesped.png">
+        <a-asset-item id="robot" src="robot.glb"></a-asset-item>
+      </a-assets>
+
+      <!-- MODELO 3D: Robot con animación de rotación -->
+      <a-entity gltf-model="#robot" position="0 0.5 -3" scale="0.5 0.5 0.5" rotation="0 0 0"
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear">
+      </a-entity>
+      
+      <!-- Pared trasera con textura de ladrillo -->
+      <a-box position="0 1.5 -5" width="6" height="3" depth="0.2" src="#ladrillo"></a-box>
+      
+      <!-- Pared lateral izquierda con textura de ladrillo -->
+      <a-box position="-3 1.5 -3" width="0.2" height="3" depth="4" src="#ladrillo"></a-box>
+      
+      <!-- Pared lateral derecha con textura de ladrillo -->
+      <a-box position="3 1.5 -3" width="0.2" height="3" depth="4" src="#ladrillo"></a-box>
+      
+      <!-- Esfera decorativa con animación de subir y bajar -->
+      <a-sphere position="-1.5 2 -2" radius="0.3" color="#FFD700"
+                animation="property: position; to: -1.5 2.8 -2; dir: alternate; loop: true; dur: 2000; easing: easeInOutQuad">
+      </a-sphere>
+      
+      <!-- Cilindro decorativo con animación de escala (pulso) -->
+      <a-cylinder position="1.5 0.75 -2" radius="0.2" height="1.5" color="#FF6B6B"
+                  animation="property: scale; to: 1.3 1.3 1.3; dir: alternate; loop: true; dur: 1500; easing: easeInOutSine">
+      </a-cylinder>
+      
+      <!-- Plano del suelo con textura de césped -->
+      <a-plane position="0 0 -3" rotation="-90 0 0" width="12" height="12" src="#cesped" repeat="4 4"></a-plane>
+      
+      <!-- Cielo azul claro con animación de color -->
+      <a-sky color="#87CEEB"
+             animation="property: color; to: #FFA07A; dir: alternate; loop: true; dur: 8000; easing: linear">
+      </a-sky>
+    </a-scene>
+  </body>
+</html>
+
